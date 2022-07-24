@@ -10,7 +10,7 @@ class ClientesForms(forms.Form):
 
 class TurnosForms(forms.Form):
     fecha= forms.DateTimeField()
-    hora= forms.DateTimeField()
+    hora= forms.CharField(max_length=10)
 
 class AutosForms(forms.Form):
     marca=forms.CharField(max_length=30)
