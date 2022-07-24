@@ -1,28 +1,27 @@
 from django import forms
 
-class ClienteForm(forms.Form):
+# Create your models here.
+
+class ClientesForms(forms.Form):
     nombre=forms.CharField(max_length=30)
     apellido = forms.CharField(max_length=30)
     email= forms.EmailField()
-    solicitud=forms.CharField(max_length=30)
-
-class AtencionClientesForm(forms.Form):
-    nombre= forms.CharField(max_length=30)
-    apellido= forms.CharField(max_length=30)
-    email= forms.EmailField()
     telefono=forms.IntegerField()
-    turno=forms.CharField(max_length=30)
 
-class AutoForm(forms.Form):
-    condicion=forms.CharField(max_length=30)
+class TurnosForms(forms.Form):
+    fecha= forms.DateField()
+    hora= forms.TimeField()
+
+class AutosForms(forms.Form):
+    marca=forms.CharField(max_length=30)
     modelo=forms.CharField(max_length=30)
     kilometraje=forms.IntegerField()
-    tipo = forms.CharField(max_length=30)
-    precio=forms.IntegerField()
+    motor=forms.CharField(max_length=30)
+
+class OperacionForms(forms.Form):
+    mantenimiento=forms.CharField(max_length=30)
+    reparacion=forms.CharField(max_length=30)
+    diagnostico=forms.CharField(max_length=30)
 
 
-class MecanicoForm(forms.Form):
-    nombre=forms.CharField(max_length=30)
-    apellido=forms.CharField(max_length=30)
-    categoria=forms.CharField(max_length=30)
-    trabajo=forms.CharField(max_length=30)
+

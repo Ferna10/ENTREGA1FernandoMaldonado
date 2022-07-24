@@ -1,31 +1,32 @@
 from django.db import models
 
 # Create your models here.
-class Cliente(models.Model):
+class Inicio(models.Model):
     nombre=models.CharField(max_length=30)
     apellido = models.CharField(max_length=30)
     email= models.EmailField()
-    solicitud=models.CharField(max_length=30)
+    telefono=models.IntegerField()
 
-class AtencionClientes(models.Model):
-    nombre= models.CharField(max_length=30)
-    apellido= models.CharField(max_length=30)
+class Clientes(models.Model):
+    nombre=models.CharField(max_length=30)
+    apellido = models.CharField(max_length=30)
     email= models.EmailField()
     telefono=models.IntegerField()
-    turno=models.CharField(max_length=30)
 
-class Auto(models.Model):
-    condicion=models.CharField(max_length=30)
+class Turnos(models.Model):
+    fecha= models.DateField()
+    hora= models.TimeField()
+
+class Autos(models.Model):
+    marca=models.CharField(max_length=30)
     modelo=models.CharField(max_length=30)
     kilometraje=models.IntegerField()
-    tipo = models.CharField(max_length=30)
-    precio=models.IntegerField()
+    motor=models.CharField(max_length=30)
 
+class Operacion(models.Model):
+    mantenimiento=models.CharField(max_length=30)
+    reparacion=models.CharField(max_length=30)
+    diagnostico=models.CharField(max_length=30)
 
-class Mecanico(models.Model):
-    nombre=models.CharField(max_length=30)
-    apellido=models.CharField(max_length=30)
-    categoria=models.CharField(max_length=30)
-    trabajo=models.CharField(max_length=30)
 
 
