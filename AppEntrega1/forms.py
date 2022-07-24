@@ -2,6 +2,12 @@ from django import forms
 
 # Create your models here.
 
+class Clientes(forms.Form):
+    nombre=forms.CharField(max_length=30)
+    apellido = forms.CharField(max_length=30)
+    email= forms.EmailField()
+    telefono=forms.IntegerField()
+
 class ClientesForms(forms.Form):
     nombre=forms.CharField(max_length=30)
     apellido = forms.CharField(max_length=30)
@@ -9,8 +15,8 @@ class ClientesForms(forms.Form):
     telefono=forms.IntegerField()
 
 class TurnosForms(forms.Form):
-    fecha= forms.DateTimeField()
-    hora= forms.CharField(max_length=10)
+    fecha= forms.DateField()
+    hora= forms.TimeField()
 
 class AutosForms(forms.Form):
     marca=forms.CharField(max_length=30)

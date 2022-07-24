@@ -35,7 +35,7 @@ def clientes_formulario(request):
             telefono=informacion["telefono"]
             clientes= Clientes(nombre=nombre, apellido=apellido, email=email, telefono=telefono)
             clientes.save()
-            return render(request,"AppEntrega1/inicio.html")
+            return render(request,"AppEntrega1/cliente.html")
     else:
         formulario= ClientesForms()
     return render(request,'AppEntrega1/clientes_formulario.html/',{"formulario":formulario})
