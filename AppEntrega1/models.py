@@ -14,8 +14,8 @@ class Clientes(models.Model):
     telefono=models.IntegerField()
 
 class Turnos(models.Model):
-    fecha= models.DateField()
-    hora= models.TimeField()
+    fecha= models.DateTimeField()
+    hora= models.CharField(max_length=10)
 
 class Autos(models.Model):
     marca=models.CharField(max_length=30)
