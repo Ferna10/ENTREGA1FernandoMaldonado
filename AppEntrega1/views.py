@@ -62,9 +62,9 @@ def turnos_formulario(request):
         formulario=TurnosForms(request.POST)
         if formulario.is_valid():
             informacion=formulario.cleaned_data
-            fecha=informacion["fecha"]
-            hora=informacion["hora"]
-            turnos=Turnos(fecha=str(fecha),hora=str(hora))
+            fecha=str(informacion["fecha"])
+            hora=str(informacion["hora"])
+            turnos=Turnos(fecha=fecha,hora=hora)
             turnos.save()
             return render(request,"AppEntrega1/turnos.html/")
     else:
