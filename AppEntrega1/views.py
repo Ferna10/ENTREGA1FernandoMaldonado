@@ -35,7 +35,7 @@ def clientes_formulario(request):
             telefono=informacion["telefono"]
             clientes= Clientes(nombre=nombre, apellido=apellido, email=email, telefono=telefono)
             clientes.save()
-            return render(request,"AppEntrega1/cliente.html")
+            return render(request,"AppEntrega1/clientes.html")
     else:
         formulario= ClientesForms()
     return render(request,'AppEntrega1/clientes_formulario.html/',{"formulario":formulario})
@@ -64,7 +64,7 @@ def turnos_formulario(request):
             informacion=formulario.cleaned_data
             fecha=informacion["fecha"]
             hora=informacion["hora"]
-            turnos=Turnos(fecha=fecha,hora=hora)
+            turnos=Turnos(fecha=str(fecha),hora=str(hora))
             turnos.save()
             return render(request,"AppEntrega1/turnos.html/")
     else:
