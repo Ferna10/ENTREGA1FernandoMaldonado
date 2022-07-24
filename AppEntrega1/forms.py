@@ -9,8 +9,8 @@ class ClientesForms(forms.Form):
     telefono=forms.IntegerField()
 
 class TurnosForms(forms.Form):
-    fecha= forms.DateField()
-    hora= forms.TimeField()
+    fecha= forms.DateTimeField()
+    hora= forms.DateTimeField()
 
 class AutosForms(forms.Form):
     marca=forms.CharField(max_length=30)
