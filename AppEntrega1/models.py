@@ -19,10 +19,7 @@ class Clientes(models.Model):
 
 class Turnos(models.Model):
     fecha= models.DateField()
-    hora= models.TimeField()
-
-    def __str__(self):
-        return str(self.fecha)+" "+str(self.hora)
+    hora = models.CharField(max_length=8)
 
 class Autos(models.Model):
     marca=models.CharField(max_length=30)
@@ -38,10 +35,6 @@ class Operacion(models.Model):
     mantenimiento=models.CharField(max_length=30)
     reparacion=models.CharField(max_length=30)
     diagnostico=models.CharField(max_length=30)
-    
-    def __str__(self):
-        return self.mantenimiento+" "+self.reparacion+" "+self.diagnostico
-
 
 
 

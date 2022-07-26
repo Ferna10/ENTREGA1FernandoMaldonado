@@ -13,6 +13,5 @@ urlpatterns = [
     path ('turnos_formulario/',turnos_formulario, name='turnos_formulario'),
     path ('autos_formulario/',autos_formulario, name='autos_formulario'),
     path ('operacion_formulario/',operacion_formulario, name='operacion_formulario'),
-
 ]
 

@@ -62,8 +62,8 @@ def turnos_formulario(request):
         formulario=TurnosForms(request.POST)
         if formulario.is_valid():
             informacion=formulario.cleaned_data
-            fecha=str(informacion["fecha"])
-            hora=str(informacion["hora"])
+            fecha=informacion["fecha"]
+            hora=informacion["hora"]
             turnos=Turnos(fecha=fecha,hora=hora)
             turnos.save()
             return render(request,"AppEntrega1/turnos.html/")
@@ -87,4 +87,3 @@ def operacion_formulario(request):
         formulario=OperacionForms()
     return render(request,"AppEntrega1/operacion_formulario.html",{"formulario":formulario})
       
-
